@@ -1,1 +1,1 @@
-# intellij-idea-foss-build
+# intellij-idea-ce-foss-build
