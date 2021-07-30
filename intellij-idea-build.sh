@@ -1,18 +1,15 @@
 #!/bin/bash
 
-intellij_idea_version=211.7628.21
-android_plugin_version=211.7442.27
+intellij_idea_version=212.4746.92
 
 # Download IntelliJ IDEA and Android plugin(required for building IntelliJ IDEA)
 
-wget https://github.com/JetBrains/intellij-community/archive/refs/tags/idea/211.7628.21.tar.gz -O intellij-idea-source.tar.gz
-wget https://github.com/JetBrains/android/archive/refs/tags/idea/211.7442.27.tar.gz -O android-intellij-idea-source.tar.gz
+wget https://github.com/JetBrains/intellij-community/archive/refs/tags/idea/212.4746.92.tar.gz -O intellij-idea-source.tar.gz
+git clone --depth 1 --branch idea/212.4746.92 git://git.jetbrains.org/idea/android.git
 
 # Extract files
 
 tar -xvf intellij-idea-source.tar.gz
-tar -xvf android-intellij-idea-source.tar.gz
-mv android-idea-$android_plugin_version android
 mv android intellij-community-idea-$intellij_idea_version
 
 # Some needed modifications
@@ -33,4 +30,3 @@ ant build
 
 cd ..
 rm intellij-idea-source.tar.gz
-rm android-intellij-idea-source.tar.gz
