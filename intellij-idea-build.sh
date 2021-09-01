@@ -1,11 +1,11 @@
 #!/bin/bash
 
-intellij_idea_version=212.4746.92
+intellij_idea_version=212.5080.55
 
 # Download IntelliJ IDEA and Android plugin(required for building IntelliJ IDEA)
 
-wget https://github.com/JetBrains/intellij-community/archive/refs/tags/idea/212.4746.92.tar.gz -O intellij-idea-source.tar.gz
-git clone --depth 1 --branch idea/212.4746.92 git://git.jetbrains.org/idea/android.git
+wget https://github.com/JetBrains/intellij-community/archive/refs/tags/idea/212.5080.55.tar.gz -O intellij-idea-source.tar.gz
+git clone --depth 1 --branch idea/212.5080.55 git://git.jetbrains.org/idea/android.git
 
 # Extract files
 
