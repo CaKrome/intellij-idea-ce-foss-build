@@ -1,6 +1,6 @@
 # intellij-idea-ce-foss-build
 
-This is a script that automatically build IntelliJ IDEA Community Edition, it includes some modifications from https://github.com/archlinux/svntogit-community/blob/packages/intellij-idea-community-edition/trunk/PKGBUILD
+This is a script that automatically build IntelliJ IDEA Community Edition, it includes some modifications from https://github.com/archlinux/svntogit-community/blob/packages/intellij-idea-community-edition/trunk
 
 # Motivation
 
