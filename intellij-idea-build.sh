@@ -17,11 +17,11 @@ mv android intellij-community-idea-$intellij_idea_version
 cd intellij-community-idea-$intellij_idea_version
 
 # https://youtrack.jetbrains.com/issue/KTIJ-19348
-patch -p0 -i kotlin_dist_for_ide.patch
+patch -p0 -i ../kotlin_dist_for_ide.patch
 
 # https://youtrack.jetbrains.com/issue/IDEA-276102
 # https://youtrack.jetbrains.com/issue/IDEA-277775
-patch -p0 -i skip_jps_build.patch
+patch -p0 -i ../skip_jps_build.patch
 
 sed '/def targetOs =/c def targetOs = "linux"' -i build/dependencies/setupJbre.gradle
 sed '/String targetOS/c   String targetOS = OS_LINUX' -i platform/build-scripts/groovy/org/jetbrains/intellij/build/BuildOptions.groovy
