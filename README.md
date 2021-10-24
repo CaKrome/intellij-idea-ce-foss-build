@@ -14,7 +14,7 @@ Execute [intellij-idea-build.sh](intellij-idea-build.sh)
 The resulting binaries can be found in out/idea-ce/artifacts.
 
 ## Dependencies
-OpenJDK version greater than 11,  ```ant``` and ```git```.
+OpenJDK version 11,  ```ant``` and ```git```.
 
 # License
 
