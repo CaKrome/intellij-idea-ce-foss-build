@@ -4,7 +4,7 @@ This is a script that automatically build IntelliJ IDEA Community Edition, it in
 
 # Motivation
 
-IntelliJ IDEA Community Edition a popular IDE for JVM, however the official binaries might include some proprietary plugins, and Jetbrains saying the official IntelliJ IDEA Community Edition is "Free, built on open source" instead of "Free, open-source".
+IntelliJ IDEA Community Edition a popular IDE for JVM, however the official binaries might include some proprietary plugins, and Jetbrains saying the official IntelliJ IDEA Community Edition is "Free, **built on** open source", thus a real free software rebuild is needed.
 
 This build uses the modifications/patches from ```intellij-idea-community-edition``` in the repo of Arch Linux, and make it available to all amd64 architecture GNU/Linux distros.
 
