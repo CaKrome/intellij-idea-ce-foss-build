@@ -39,8 +39,4 @@ then
 
 else
   echo "Downloaded Android plugin maybe corrupted."
-
-  # Clean up
-  rm intellij-idea-source.tar.gz
-  rm checksum_bv
 fi
