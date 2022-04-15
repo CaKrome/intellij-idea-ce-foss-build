@@ -7,17 +7,17 @@ cd workspace
 
 git clone --depth 1 --branch idea/$idea_version git://git.jetbrains.org/idea/android.git
 rm -rf android/.git/
-find android/ -type f -exec sha256sum {} \; | sort -k 2 | sha256sum | awk '{print $1}' > checksum_1
+find android/ -type f -exec sha256sum {} + | awk '{print $1}' | sort | sha256sum | awk '{print $1}' > checksum_1
 rm -rf android/
 
 git clone --depth 1 --branch idea/$idea_version git://git.jetbrains.org/idea/android.git
 rm -rf android/.git/
-find android/ -type f -exec sha256sum {} \; | sort -k 2 | sha256sum | awk '{print $1}' > checksum_2
+find android/ -type f -exec sha256sum {} + | awk '{print $1}' | sort | sha256sum | awk '{print $1}' > checksum_2
 rm -rf android/
 
 git clone --depth 1 --branch idea/$idea_version git://git.jetbrains.org/idea/android.git
 rm -rf android/.git/
-find android/ -type f -exec sha256sum {} \; | sort -k 2 | sha256sum | awk '{print $1}' > checksum_3
+find android/ -type f -exec sha256sum {} + | awk '{print $1}' | sort | sha256sum | awk '{print $1}' > checksum_3
 rm -rf android/
 
 if [[ $(cat checksum_1) == $(cat checksum_2) ]] && [[ $(cat checksum_2) == $(cat checksum_2) ]]
