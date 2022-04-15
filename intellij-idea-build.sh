@@ -32,11 +32,15 @@ then
 
   ./installers.cmd -Dintellij.build.target.os=linux
 
+  # Clean up
+  cd ..
+  rm intellij-idea-source.tar.gz
+  rm checksum_bv
+
 else
   echo "Downloaded Android plugin maybe corrupted."
-fi
 
-# Clean up
-cd ..
-rm intellij-idea-source.tar.gz
-rm checksum_bv
+  # Clean up
+  rm intellij-idea-source.tar.gz
+  rm checksum_bv
+fi
