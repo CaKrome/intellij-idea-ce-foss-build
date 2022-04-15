@@ -1,6 +1,6 @@
 #!/bin/bash
 
-intellij_idea_version=221.5080.210
+intellij_idea_version=$(cat idea_ver)
 
 # Download IntelliJ IDEA and Android plugin(required for building IntelliJ IDEA)
 
@@ -11,11 +11,11 @@ git clone --depth 1 --branch idea/$intellij_idea_version git://git.jetbrains.org
 
 tar -xf intellij-idea-source.tar.gz
 rm -rf android/.git/
-tar -C android/ -cf - --sort=name android/ --mtime='UTC 2022-01-01' --group=0 --owner=0 --numeric-owner | sha256sum | awk '{print $1}' > checksum_android
-if [[ $(cat checksum_android) == "5b683ef8a80678a404b95a50148897e544c52d173cb017d0c8667c14b70df94f" ]]
+find android/ -type f -exec sha256sum {} + | awk '{print $1}' | sort | sha256sum | awk '{print $1}' > checksum_bv
+if [[ $(cat checksum_bv) == $(cat checksum_android) ]]
 then
   echo "Android plugin checksum verification completed"
-  echo "Checksum is $(cat checksum_android)"
+  echo "Checksum is $(cat checksum_bv)"
   mv android intellij-community-idea-$intellij_idea_version
 
   # Some needed modifications
@@ -39,4 +39,4 @@ fi
 # Clean up
 cd ..
 rm intellij-idea-source.tar.gz
-rm checksum_android
+rm checksum_bv

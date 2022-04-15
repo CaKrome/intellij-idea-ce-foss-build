@@ -1,6 +1,6 @@
 #!/bin/bash
 
-idea_version=221.5080.210
+idea_version=$(cat idea_ver)
 
 mkdir workspace
 cd workspace
@@ -22,6 +22,7 @@ rm -rf android/
 
 if [[ $(cat checksum_1) == $(cat checksum_2) ]] && [[ $(cat checksum_2) == $(cat checksum_2) ]]
 then
+  cat checksum_1 > ../checksum_android
   echo "The checksum is $(cat checksum_1)"
 else
   echo "Something might went wrong."
